@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Registration form</title>
+  </head>
+  <body>
+    <div class="login">
+      <div class="login-screen">
+        <div class="app-title">
+          <h1>Регистрация</h1>
+        </div>
+        <div class="login-form">
+          <div class="control-group">
+          <input type="text" class="login-field" placeholder="Имя" id="name">
+          </div>
+          <div class="control-group">
+            <input type="text" class="login-field" value="" placeholder="Фамилия" id="surname">
+            </div>
+
+            <div class="control-group">
+              <input type="email" class="login-field" value="" placeholder="Почта" id="email">
+              </div>
+  
+              <div class="control-group">
+                <input type="tel" class="login-field" value="" placeholder="Номер телефона" id="phone">
+                </div>
+
+                <div class="control-group">
+                  <textarea class="login-field" placeholder="О себе" id="about"></textarea>
+  
+          <a class="btn btn-primary btn-large btn-block" href="#">Отправить</a>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
