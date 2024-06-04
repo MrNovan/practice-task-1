@@ -106,11 +106,11 @@ export default () => {
       })
       .then((data) => {
         console.log(data); // Обработка ответа от сервера
-        alert('Данные успешно отправлены!');// Вывод сообщения об успешной отправке
+        alert('Данные успешно отправлены!'); // eslint-disable-line
       })
       .catch((error) => {
         console.error('Error:', error);
-        alert('Произошла ошибка при отправке данных');
+        alert('Произошла ошибка при отправке данных'); // eslint-disable-line
       });
   };
 
