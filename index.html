@@ -36,5 +36,41 @@
       </div>
     </div>
     <script type="module" src="/app.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+<script>
+  // With the above scripts loaded, you can call `tippy()` with a CSS
+  // selector and a `content` prop:
+  tippy('#name', {
+  content: 'Имя пользователя может содержать только буквы',
+  animation: 'scale',
+  arrow: true,
+  placement: 'right',
+});
+tippy('#surname', {
+  content: 'Фамилия пользователя может содержать только буквы',
+  animation: 'scale',
+  arrow: true,
+  placement: 'right',
+});
+tippy('#email', {
+  content: 'Формат почты: 3LxqK@example.com',
+  animation: 'scale',
+  arrow: true,
+  placement: 'right',
+});
+tippy('#phone', {
+  content: 'Телефон должен начинаться с + в начале и 11 цифр после',
+  animation: 'scale',
+  arrow: true,
+  placement: 'right',
+});
+tippy('#about', {
+  content: 'Не более 50 символов',
+  animation: 'scale',
+  arrow: true,
+  placement: 'right',
+});
+</script>
   </body>
 </html>
