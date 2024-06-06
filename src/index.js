@@ -8,55 +8,34 @@ export default () => {
 
   nameInput.addEventListener('input', () => {
     const nameRegex = /^[a-zA-Zа-яА-Я]+$/;
-    if (nameRegex.test(nameInput.value) && nameInput.value.length > 0) {
+    if (nameRegex.test(nameInput.value)) {
       nameInput.classList.remove('input-invalid');
       nameInput.classList.add('input-valid');
     } else {
       nameInput.classList.remove('input-valid');
       nameInput.classList.add('input-invalid');
     }
-
-    if (nameInput.classList.contains('input-invalid') || surnameInput.classList.contains('input-invalid')
-      || emailInput.classList.contains('input-invalid')) {
-      button.disabled = true;
-    } else {
-      button.disabled = false;
-    }
   });
 
   surnameInput.addEventListener('input', () => {
     const surnameRegex = /^[a-zA-Zа-яА-Я]+$/;
-    if (surnameRegex.test(surnameInput.value) && surnameInput.value.length > 0) {
+    if (surnameRegex.test(surnameInput.value)) {
       surnameInput.classList.remove('input-invalid');
       surnameInput.classList.add('input-valid');
     } else {
       surnameInput.classList.remove('input-valid');
       surnameInput.classList.add('input-invalid');
     }
-
-    if (nameInput.classList.contains('input-invalid') || surnameInput.classList.contains('input-invalid')
-      || emailInput.classList.contains('input-invalid')) {
-      button.disabled = true;
-    } else {
-      button.disabled = false;
-    }
   });
 
   emailInput.addEventListener('input', () => {
     const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-    if (emailRegex.test(emailInput.value) && emailInput.value.length > 0) {
+    if (emailRegex.test(emailInput.value)) {
       emailInput.classList.remove('input-invalid');
       emailInput.classList.add('input-valid');
     } else {
       emailInput.classList.remove('input-valid');
       emailInput.classList.add('input-invalid');
-    }
-
-    if (nameInput.classList.contains('input-invalid') || surnameInput.classList.contains('input-invalid')
-      || emailInput.classList.contains('input-invalid')) {
-      button.disabled = true;
-    } else {
-      button.disabled = false;
     }
   });
 
@@ -83,6 +62,15 @@ export default () => {
   });
 
   const sendData = () => {
+    const name = nameInput.value.trim();
+    const surname = surnameInput.value.trim();
+    const email = emailInput.value.trim();
+
+    if (!name || !surname || !email) {
+      alert('Пожалуйста, заполните обязательные поля: имя, фамилия, email');
+      return;
+    }
+
     const formData = {
       name: nameInput.value,
       surname: surnameInput.value,
